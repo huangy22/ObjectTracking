@@ -20,5 +20,6 @@ python hand_detection.py
 ```
 
 Working Example:
+
 <img src="https://github.com/huangy22/ObjectTracking/blob/master/hand_track.gif">
 
