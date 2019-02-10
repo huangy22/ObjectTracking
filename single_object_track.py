@@ -13,6 +13,9 @@ KERNEL_SIZE = 5
 
 def main():
     cap = cv2.VideoCapture(0)
+    cv2.namedWindow("Frame", cv2.WINDOW_NORMAL)
+    cv2.namedWindow("mask", cv2.WINDOW_NORMAL)
+    cv2.namedWindow("res", cv2.WINDOW_NORMAL)
 
     # keep the motion of the center of detected objects
     center_path = deque(maxlen=64)
@@ -93,7 +96,7 @@ def generate_mask(img: np.ndarray, color: str):
     # the pixels under the kernel is 1, otherwise it is eroded (made to zero).
     # Useful for remove white noise, but also shrinks the object. Usually followed
     # by a dilation.
-    mask = cv2.erode(mask, kernel, iterations=2)
+    mask = cv2.erode(mask, kernel, iterations=1)
 
     # Opening: An erosion followed by dilation. Useful to remove white noise.
     mask = cv2.morphologyEx(mask, cv2.MORPH_OPEN, kernel)
