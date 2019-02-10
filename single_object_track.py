@@ -1,3 +1,5 @@
+# Code adapted from https://github.com/akshaybahadur21/HandMovementTracking
+
 import numpy as np
 import cv2
 import argparse
@@ -22,6 +24,7 @@ def main():
 
     while True:
         ret, img = cap.read()
+        img = cv2.flip(img, 1)
         hsv = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)
 
         # detect objects with color bule
