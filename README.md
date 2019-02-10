@@ -10,6 +10,9 @@ Running the code:
 ```
 python single_object_track.py
 ```
+Working Example:
+
+<img src="https://github.com/huangy22/ObjectTracking/blob/master/object_track.gif">
 
 ## Hand Movement and Posture Tracking
 A simple tutorial to detect human's hand and capture its posture.

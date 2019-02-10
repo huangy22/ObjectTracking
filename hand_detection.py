@@ -21,7 +21,8 @@ def main():
         kernel_square = np.ones((5, 5), np.uint8)
         dilation = cv2.dilate(median, kernel_square, iterations=2)
         closing = cv2.morphologyEx(dilation, cv2.MORPH_CLOSE, kernel_square)
-        ret, thresh = cv2.threshold(closing, 30, 255, cv2.THRESH_BINARY)
+        opening = cv2.morphologyEx(closing, cv2.MORPH_OPEN, kernel_square)
+        ret, thresh = cv2.threshold(opening, 30, 255, cv2.THRESH_BINARY)
 
         contours, _ = cv2.findContours(
             thresh.copy(), cv2.RETR_TREE, cv2.CHAIN_APPROX_NONE
