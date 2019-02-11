@@ -1,5 +1,5 @@
 # Dependency
-This code is in Python (version 2.7 and higher) and requires the opencv library.
+This code is in Python 3 and requires the opencv library.
 
 # Description
 ## Single Object Tracking
